@@ -23,8 +23,6 @@ int check_cycle(listint_t *list)
 		future = future->next->next;
 		if (list == future)
 			return (1);
-		else if (list->next == future)
-			return (1);
 	}
 	return (0);
 }
