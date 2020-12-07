@@ -9,7 +9,7 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *future = list;
+	listint_t *future = list, *more_future = list;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
@@ -21,7 +21,8 @@ int check_cycle(listint_t *list)
 	{
 		list = list->next;
 		future = future->next->next;
-		if (list == future)
+		more_future = more_future->next->next->next;
+		if (list == future || list == more_future)
 			return (1);
 	}
 	return (0);
