@@ -22,7 +22,7 @@ int check_cycle(listint_t *list)
 			return (1);
 
 		current = current->next;
-		future = future->next;
+		future = future->next->next;
 	}
 	return (0);
 }
