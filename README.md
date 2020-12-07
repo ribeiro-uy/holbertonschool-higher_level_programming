@@ -7,4 +7,4 @@ This repository contains higer-level programming projects for Holberton School.
 
 Author
 
-    Roberto Ribeiro < [Roberto Ribeiro](https://github.com/rmribeiro-uy) >
+    Roberto Ribeiro  Roberto Ribeiro](https://github.com/rmribeiro-uy)
