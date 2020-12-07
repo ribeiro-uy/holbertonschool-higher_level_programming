@@ -21,7 +21,9 @@ int check_cycle(listint_t *list)
 	{
 		list = list->next;
 		future = future->next->next;
-		if (list == future || (list == future->next && future->next))
+		if (list == future)
+			return (1);
+		if (list->next == future)
 			return (1);
 	}
 	return (0);
