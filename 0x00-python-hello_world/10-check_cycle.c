@@ -11,17 +11,18 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *current = list;
-	listint_t *future = list;
+	listint_t *future = list->next;
 
 	if (list == NULL || list->next == NULL)
 		return (0);
 
 	while (current && future)
 	{
-		current = current->next;
-		future = future->next->next;
 		if (current == future)
 			return (1);
+
+		current = current->next;
+		future = future->next;
 	}
 	return (0);
 }
