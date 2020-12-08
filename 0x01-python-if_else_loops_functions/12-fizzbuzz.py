@@ -8,9 +8,11 @@ while i <= 100:
     elif (i % 5 == 0):
         print("Buzz", end="")
     else:
-        print("{}", i)
+        print(i, end="")
 
     if i != 100:
-            print(" ")
+            print(" ", end="")
+    else:
+        print("")
     i += 1
 
