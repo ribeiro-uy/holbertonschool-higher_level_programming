@@ -7,9 +7,9 @@ if __name__ == "__main__":
     if leng == 0:
         print(" 0 arguments.")
     elif leng == 1:
-        print("{} argument:".format(leng))
+        print("{:d} argument:".format(leng))
     else:
-        print("{} arguments:".format(leng))
+        print("{:d} arguments:".format(leng))
     while i <= leng:
-        print("{}: {}".format(i, sys.argv[i]))
+        print("{:d}: {:s}".format(i, sys.argv[i]))
         i += 1
