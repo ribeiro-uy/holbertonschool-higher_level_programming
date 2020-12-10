@@ -20,7 +20,7 @@ if __name__ == "__main__":
                   .format(sys.argv[1], sys.argv[3],
                           mul(int(sys.argv[1]), int(sys.argv[3]))))
         elif sys.argv[2] == "/":
-            print("{} / {} = {:.2f}"
+            print("{} / {} = {:d}"
                   .format(sys.argv[1], sys.argv[3],
                           div(int(sys.argv[1]), int(sys.argv[3]))))
         else:
