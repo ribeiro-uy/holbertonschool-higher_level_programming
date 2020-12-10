@@ -10,6 +10,6 @@ if __name__ == "__main__":
         print("{:d} argument:".format(leng))
     else:
         print("{:d} arguments:".format(leng))
-    while i <= leng + 1:
+    while i <= leng:
         print("{:d}: {:s}".format(i, sys.argv[i]))
         i += 1
