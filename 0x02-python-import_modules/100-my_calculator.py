@@ -5,22 +5,26 @@ if __name__ == "__main__":
 
     leng = len(sys.argv)
 
-    if leng !=  3:
+    if leng != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
-        if sys.argv[3] == "+":
-            print("{:d} + {:d} = {:d}".format(sys.argv[1], sys.argv[3],
-                                              int(sys.argv[1] + int(sys.argv[3]))))
-        elif sys.argv[3] == "-":
-            print("{:d} - {:d} = {:d}".format(sys.argv[1], sys.argv[3],
-                                              int(sys.argv[1] - int(sys.argv[3]))))
-        elif sys.argv[3] == "*":
-            print("{:d} * {:d} = {:d}".format(sys.argv[1], sys.argv[3],
-                                              int(sys.argv[1] * int(sys.argv[3]))))
-        elif sys.argv[3] == "/":
-            print("{:d} / {:d} = {:d}".format(sys.argv[1], sys.argv[3],
-                                              int(sys.argv[1] / int(sys.argv[3]))))
+        if sys.argv[2] == "+":
+            print("{} + {} = {:d}"
+                  .format(sys.argv[1], sys.argv[3],
+                          int(sys.argv[1]) + int(sys.argv[3])))
+        elif sys.argv[2] == "-":
+            print("{} - {} = {:d}"
+                  .format(sys.argv[1], sys.argv[3],
+                          int(sys.argv[1]) - int(sys.argv[3])))
+        elif sys.argv[2] == "*":
+            print("{} * {} = {:d}"
+                  .format(sys.argv[1], sys.argv[3],
+                          int(sys.argv[1]) * int(sys.argv[3])))
+        elif sys.argv[2] == "/":
+            print("{} / {} = {:d}"
+                  .format(sys.argv[1], sys.argv[3],
+                          int(sys.argv[1]) / int(sys.argv[3])))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
-            exit (1)
+            exit(1)
