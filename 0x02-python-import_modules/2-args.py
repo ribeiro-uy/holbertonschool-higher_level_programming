@@ -5,7 +5,7 @@ if __name__ == "__main__":
     leng = len(sys.argv) - 1
 
     if leng == 0:
-        print(" 0 arguments.")
+        print("0 arguments.")
     elif leng == 1:
         print("{:d} argument:".format(leng))
     else:
