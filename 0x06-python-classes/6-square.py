@@ -67,7 +67,6 @@ class Square:
         """
         Prints in stdout the square with the character #
         """
-        if self.position[1] > 0:
-            print("\n" * self.position[1])
+        print('{}'.format('\n' * self.__position[1]), end="")
         for element in range(self.size):
             print(" " * self.position[0] + "#" * self.size)
