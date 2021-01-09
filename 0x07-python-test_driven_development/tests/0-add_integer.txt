@@ -1,0 +1,64 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+>>> add_integer(10, 9)
+19
+
+>>> add_integer(10, -2)
+8
+
+>>> add_integer(-10, -2)
+-12
+
+>>> add_integer(10, 1.2)
+11
+
+>>> add_integer(10.5, 2)
+12
+
+>>> add_integer(10)
+108
+
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(10, "atenea")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("atenea")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer (5a, 2)
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
+
+>>> add_integer (5, 2b)
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax
+
+>>> add_integer(True)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(10, True)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(1e100000)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer

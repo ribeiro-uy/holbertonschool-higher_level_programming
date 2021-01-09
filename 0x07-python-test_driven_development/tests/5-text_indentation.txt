@@ -1,0 +1,53 @@
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Ey. ta mansa la nutria? yes")
+Ey.
+<BLANKLINE>
+ta mansa la nutria?
+<BLANKLINE>
+yes
+
+>>> text_indentation("Tragame tierra")
+Tragame tierra
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(text)
+Traceback (most recent call last):
+...
+NameError: name 'text' is not defined
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(True)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(["Roberto"])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("Roberto", 5)
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation("Roberto" 5)
+Traceback (most recent call last):
+...
+SyntaxError: invalid syntax

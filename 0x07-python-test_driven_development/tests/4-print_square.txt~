@@ -1,0 +1,1 @@
+>>> add_integer = __import__("4-print_square.py").add_integer
