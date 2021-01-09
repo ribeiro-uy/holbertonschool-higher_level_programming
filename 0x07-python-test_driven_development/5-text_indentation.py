@@ -7,11 +7,14 @@ Task: 5
 
 def text_indentation(text):
     """
-    Function that prints a text with 2 new lines after each of these characters: ., ? and :
+    Function that prints a text with 2 new lines
+    after each of these characters: ., ? and :
     """
     flag_space = 0
     conditions = ".?:"
-    
+
+    if type(text) is not str:
+        raise TypeError("text must be a string")
     for character in text:
         if flag_space == 1:
             flag_space = 0
