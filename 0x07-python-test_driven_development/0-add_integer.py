@@ -1,14 +1,13 @@
 #!/usr/bin/python3
 """
-This module contains
-the addition
-of two intergers
+Project: 0x07-python-test_driven_development
+Task: 0
 """
 
 
 def add_integer(a, b=98):
     """
-    to add two intergers
+    Function that adds 2 integers.
     """
     if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
