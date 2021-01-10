@@ -1,0 +1,67 @@
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+>>> say_my_name("Roberto", "Ribeiro")
+My name is Roberto Ribeiro
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Roberto", None)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name(7, "Roberto")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Roberto", 7)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name(55)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("", "Ribeiro")
+My name is  Ribeiro
+
+>>> say_my_name(True, "Ribeiro")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Roberto", False)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+>>> say_my_name(["roberto"])
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("Roberto", "Ribeiro", "Martins")
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+>>> say_my_name("Roberto", 5a)
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid syntax
+
+>>> say_my_name(a, "Roberto")
+Traceback (most recent call last):
+    ...
+NameError: name 'a' is not defined
