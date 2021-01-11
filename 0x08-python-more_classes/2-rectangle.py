@@ -15,14 +15,15 @@ class Rectangle:
         Constructor
         """
 
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
         """
         Getter the width
         """
+
         return self.__width
 
     @width.setter
@@ -42,6 +43,7 @@ class Rectangle:
         """
         Getter the height
         """
+
         return self.__height
 
     @height.setter
@@ -60,12 +62,14 @@ class Rectangle:
         """
         Returns the rectangle area
         """
+
         return self.width * self.height
 
     def perimeter(self):
         """
         Returns the rectangle perimeter
         """
+
         if self.width == 0 or self.height == 0:
             return 0
         return self.width + self.height
