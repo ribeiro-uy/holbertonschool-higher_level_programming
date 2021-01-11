@@ -23,6 +23,7 @@ class Rectangle:
         """
         Getter the width
         """
+
         return self.__width
 
     @width.setter
