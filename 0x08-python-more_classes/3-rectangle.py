@@ -78,7 +78,7 @@ class Rectangle:
 
         str = ""
         if self.__width == 0 or self.__height == 0:
-            return 0
+            return str
         else:
             for row in range(self.__height):
                 str += "#" * self.__width
