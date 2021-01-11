@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Project: 0x08. Python - More Classes and Objects
-Task: 2
+Task: 3
 """
 
 
@@ -18,6 +18,21 @@ class Rectangle:
         self.width = width
         self.height = height
 
+    def __str__(self):
+        """
+        Print the rectangle with the character #
+        """
+
+        str = ""
+        if self.__width == 0 or self.__height == 0:
+            return str
+        else:
+            for row in range(self.__height):
+                str += "#" * self.__width
+                if row < (self.__height - 1):
+                    str += "\n"
+        return str
+    
     @property
     def width(self):
         """
@@ -71,17 +86,4 @@ class Rectangle:
             return 0
         return (self.__width + self.__height) * 2
 
-    def __str__(self):
-        """
-        Print the rectangle with the character #
-        """
-
-        str = ""
-        if self.__width == 0 or self.__height == 0:
-            return str
-        else:
-            for row in range(self.__height):
-                str += "#" * self.__width
-                if row < (self.__height - 1):
-                    str += "\n"
-        return str
+    
