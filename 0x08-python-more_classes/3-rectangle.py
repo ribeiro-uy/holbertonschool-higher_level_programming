@@ -15,8 +15,8 @@ class Rectangle:
         Constructor
         """
 
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -69,7 +69,7 @@ class Rectangle:
         """
         if self.width == 0 or self.height == 0:
             return 0
-        return self.width + self.height
+        return (self.width + self.height) * 2
 
     def __str__(self):
         """
