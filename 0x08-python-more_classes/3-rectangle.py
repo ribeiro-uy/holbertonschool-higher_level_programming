@@ -32,7 +32,7 @@ class Rectangle:
                 if row < (self.__height - 1):
                     str += "\n"
         return str
-    
+
     @property
     def width(self):
         """
@@ -85,5 +85,3 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
-
-    
