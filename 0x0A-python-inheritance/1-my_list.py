@@ -14,4 +14,5 @@ class MyList(list):
         Public instance method that prints the list,
         but sorted (ascending sort).
         """
-        print(sorted(self))
+        print("{}".format(sorted(self)))
+        #        print(sorted(self))
