@@ -4,6 +4,7 @@ Project: 0x0A-python-inheritance
 Task: 2
 """
 
+
 def is_same_class(obj, a_class):
     """
     Function that returns True if the object is exactly
