@@ -4,7 +4,9 @@ Project: 0x0A-python-inheritance.
 Task: 8
 """
 
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """
@@ -15,8 +17,7 @@ class Rectangle(BaseGeometry):
         """
         Constructor
         """
-        self.__width = width  
+        self.__width = width
         self.__height = height
-        if super().integer_validator("width", self.__width):
-        if super().integer_validator("height", self.__height):
-
+        if super().integer_validator("width", self.__width)
+        if super().integer_validator("height", self.__height)
