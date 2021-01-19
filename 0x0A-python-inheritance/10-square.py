@@ -3,7 +3,7 @@
 Project: 0x0A-python-inheritance.
 Task: 10
 """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
