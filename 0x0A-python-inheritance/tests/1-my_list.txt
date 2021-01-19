@@ -1,0 +1,23 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> issubclass(MyList, list)
+True
+
+>>> tmp_list = MyList()
+
+>>> tmp_list.append(1)
+
+>>> tmp_list.append(14)
+
+>>> tmp_list.append(2)
+
+>>> tmp_list.append(13)
+
+>>> print(tmp_list)
+[1, 14, 2, 13]
+
+>>> tmp_list.print_sorted()
+[1, 2, 13, 14]
+
+>>> print(tmp_list)
+[1, 14, 2, 13]
