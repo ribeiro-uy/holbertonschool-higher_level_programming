@@ -23,7 +23,9 @@ True
 [1, 14, 2, 13]
 
 >>> tmp_list.append(-5)
+
 >>> print(tmp_list)
 [1, 14, 2, 13, -5]
+
 >>> tmp_list.print_sorted()
-[-5, 1, 1, 13, 14]
+[-5, 1, 2, 13, 14]
