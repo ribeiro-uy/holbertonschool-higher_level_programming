@@ -29,3 +29,9 @@ True
 
 >>> tmp_list.print_sorted()
 [-5, 1, 2, 13, 14]
+
+>>> new_list = list()
+>>> new_list.print_sorted()
+Traceback (most recent call last):
+    ...
+    AttributeError: 'list' object has no attribute 'print_sorted'
