@@ -5,6 +5,12 @@ True
 
 >>> tmp_list = MyList()
 
+>>> print(tmp_list)
+[]
+
+>>> tmp_list.print_sorted()
+[]
+
 >>> tmp_list.append(1)
 
 >>> tmp_list.append(14)
