@@ -12,9 +12,8 @@ def pascal_triangle(n):
     the Pascals triangle of n
     """
 
-    new_list = []
     if n <= 0:
-        return new_list
+        return []
     new_list = [[1], [1, 1]]
     for i in range(1, n):
         row = [1]
