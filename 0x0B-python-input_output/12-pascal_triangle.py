@@ -11,6 +11,7 @@ def pascal_triangle(n):
     that returns a list of lists of integers representing
     the Pascals triangle of n
     """
+    n -= 1
     new_list = []
     if n <= 0:
         return new_list
