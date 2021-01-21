@@ -12,7 +12,7 @@ def pascal_triangle(n):
     the Pascals triangle of n
     """
 
-    if n == 0:
+    if n <= 0:
         lista = []
         return lista
     else:
