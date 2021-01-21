@@ -12,16 +12,14 @@ def pascal_triangle(n):
     the Pascals triangle of n
     """
 
+    new_list = []
     if n <= 0:
-        lista = []
-        return lista
-    else:
-        lista = [[1], [1, 1]]
+        return new_list
+    new_list = [[1], [1, 1]]
     for i in range(1, n):
-        linea = [1]
-        for j in range(0, len(lista[i]) - 1):
-
-            linea.extend([lista[i][j] + lista[i][j+1]])
-        linea += [1]
-        lista.append(linea)
-    return lista
+        row = [1]
+        for j in range(0, len(new_list[i]) - 1):
+            row.extend([new_list[i][j] + new_list[i][j+1]])
+        row += [1]
+        new_list.append(row)
+    return new_list
