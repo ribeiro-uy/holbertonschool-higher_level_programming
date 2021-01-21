@@ -12,12 +12,15 @@ def pascal_triangle(n):
     the Pascals triangle of n
     """
 
-    if n > 1:
-        n -= 1
     new_list = []
     if n <= 0:
         return new_list
-    new_list = [[1], [1, 1]]
+    new_list = [[1]]
+    if n == 1:
+            return new_list
+    else:
+        n -= 1
+        new_list = [[1], [1, 1]]
     for i in range(1, n):
         row = [1]
         for j in range(0, len(new_list[i]) - 1):
