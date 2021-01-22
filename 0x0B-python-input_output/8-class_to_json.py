@@ -3,7 +3,6 @@
 Project: 0x0B. Python - Input/Output
 Task: 8
 """
-import json
 
 
 def class_to_json(obj):
