@@ -37,9 +37,53 @@ class Base:
         """
         Writes the JSON string representation of list_objs to a file.
         """
+        if type(list_objs) is not list:
+            raise TypeError("argument must be a list")
+        lista = []
+        name = str(cls.__name__) + ".json"
         if list_objs is None:
-            return "[]"
+            with open(name, 'w') as f:
+                f.write(cls.to_json_string(lista))
+        else:
+            for i in list_objs:
+                lista.append(cls.to_dictionary(i))
+            with open(name, 'w') as f:
+                    f.write(cls.to_json_string(lista))
 
-        for objects in list_objs:
-            with open(filename, encoding="utf-8", mode="w") as my_file:
-                my_file.write(cls.to_json_string(objects))
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation json_string.
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set.
+        """
+        dummy_instance = cls(1, 1, 1, 1)
+        cls.update(dummy_instance, **dictionary)
+        return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances.
+        """
+        filename = str(cls.__name__) + ".json"
+        lista_big = []
+        lista_dicts = []
+        text = ""
+        try:
+            with open(filename, 'r') as f:
+                text = f.read()
+            lista_dicts = cls.from_json_string(text)
+            for i in lista_dicts:
+                inst = cls.create(**i)
+                lista_big.append(inst)
+            return lista_big
+        except IOError:
+            return []
