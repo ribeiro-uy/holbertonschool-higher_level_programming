@@ -25,108 +25,44 @@ class Square(Rectangle):
         str method
         """
         return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.__x, self.__y, self.width)
+            self.id, self.x, self.y, self.width)
 
     @property
-    def width(self):
+    def size(self):
         """
-        Getter the width
+        Getter the size
         """
-        return self.__width
+        return self.width
 
-    @width.setter
-    def width(self, value):
+    @size.setter
+    def size(self, value):
         """
-        Setter the width
+        Setter the size
         """
         if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format("width"))
+            raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("{:s} must be > 0".format("width"))
-        self.__width = value
-
-    @property
-    def height(self):
-        """
-        Getter the height
-        """
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """
-        Setter the height
-        """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format("height"))
-        if value <= 0:
-            raise ValueError("{:s} must be > 0".format("height"))
-        self.__height = value
-
-    @property
-    def x(self):
-        """
-        Getter the x
-        """
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        """
-        Setter the x
-        """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format("x"))
-        if value < 0:
-            raise ValueError("{:s} must be > 0".format("x"))
-        self.__x = value
-
-    @property
-    def y(self):
-        """
-        Getter the y
-        """
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """
-        Setter the y
-        """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format("y"))
-        if value < 0:
-            raise ValueError("{:s} must be > 0".format("y"))
-        self.__y = value
-
-    def area(self):
-        """
-        Returns the rectangle area
-        """
-        return self.__width * self.__height
-
-    def display(self):
-        """
-        Prints in stdout the Rectangle instance with the character #
-        """
-        print("\n" * self.__y)
-
-        for row in range(self.__height):
-            print(" " * self.__x, "#" * self.__width)
+            raise ValueError("width must be > 0")
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
         """
         Function that assigns an argument to each attribute:
         """
-        if len(args) > 5:
-            raise IndexError("No more than 5 arguments")
-        arguments = ["id", "width", "height", "x", "y"]
+
+        if len(args) > 4:
+            raise IndexError("No more than 4 arguments")
+        arguments = ["id", "size", "x", "y"]
         if len(args) != 0:
             for arg in range(len(args)):
                 setattr(self, arguments[arg], args[arg])
         else:
-            for key in kwargs:
-                setattr(self, key, kwargs[key])
-    
-
-
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
+                    
+    def to_dictionary(self):
+        """
+        returns the dictionary representation of a Square
+        """
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
