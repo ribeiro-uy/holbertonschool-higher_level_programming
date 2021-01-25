@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 """
 Project: 0x0C-python-almost_a_circle
-Task: Update Task 3
+Task: Update Task 13
 """
 from models.base import Base
 
 
 class Rectangle(Base):
     """
-    Class that inherits from Base:
+    Class that inherits from Base,
     """
 
     __nb_objects = 0
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Constructor
+        Constructor.
         """
         super().__init__(id)
         if type(width) is not int:
@@ -42,7 +42,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        str method
+        str method.
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
@@ -57,7 +57,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """
-        Setter the width
+        Setter the width.
         """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("width"))
@@ -75,7 +75,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """
-        Setter the height
+        Setter the height.
         """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("height"))
@@ -86,7 +86,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-        Getter the x
+        Getter the x.
         """
         return self.__x
 
@@ -104,14 +104,14 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-        Getter the y
+        Getter the y.
         """
         return self.__y
 
     @y.setter
     def y(self, value):
         """
-        Setter the y
+        Setter the y.
         """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format("y"))
@@ -121,13 +121,13 @@ class Rectangle(Base):
 
     def area(self):
         """
-        Returns the rectangle area
+        Returns the rectangle area.
         """
         return self.__width * self.__height
 
     def display(self):
         """
-        Prints in stdout the Rectangle instance with the character #
+        Prints in stdout the Rectangle instance with the character #.
         """
         print("\n" * self.__y)
 
@@ -136,7 +136,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Function that assigns an argument to each attribute:
+        Function that assigns an argument to each attribute.
         """
         if len(args) > 5:
             raise IndexError("No more than 5 arguments")
@@ -149,4 +149,15 @@ class Rectangle(Base):
                 setattr(self, key, kwargs[key])
     
 
+    def to_dictionary(self):
+        """
+        returns the dictionary representation of a Rectangle.
+        """
 
+        return {"id": self.id, "width": self.__width, "height": self.__height, "x": self.__x, "y": self.__y}
+        """
+        return dict(
+            (key, value)
+            for (key, value) in self.__dict__.items()
+        )
+        """
