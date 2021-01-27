@@ -7,7 +7,6 @@ import json
 import unittest
 from models.square import Square
 from models.rectangle import Rectangle
-import pep8
 from os import path
 
 

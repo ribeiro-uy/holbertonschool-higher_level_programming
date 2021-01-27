@@ -4,7 +4,6 @@
 
 import unittest
 from models.square import Square
-import pep8
 
 
 class TestCodeFormat(unittest.TestCase):
