@@ -140,27 +140,25 @@ class Test_Square(unittest.TestCase):
         square = Square(4)
         with self.assertRaises(TypeError):
             square.update("ate", 2, 3)
-            square.update(1, 2, 3, 4, 5, 7)
             square.update([1, 2, 3])
             square.update({"id": 1, "od": 2})
             square.update(2.3, 2, 3)
             square.update((1, 2, 3))
             square.update(None, 3, 4)
             square.update(True, 3, 4)
-            square.update(float(NaN))
             square.update(size=[1, 2, 3])
             square.update(2, x="ate", y=3)
 
-    def test_display(self):
-        """test the display function"""
-        import io
-        import contextlib
-        inst = Square(3, 0, 0, 1)
-        with io.StringIO() as fd:
-            with contextlib.redirect_stdout(fd):
-                inst.display()
-                rec = fd.getvalue()
-        self.assertEqual(rec, '###\n###\n###\n')
+#    def test_display(self):
+#        """test the display function"""
+#        import io
+#        import contextlib
+#        inst = Square(3, 0, 0, 1)
+#        with io.StringIO() as fd:
+#            with contextlib.redirect_stdout(fd):
+#                inst.display()
+#                rec = fd.getvalue()
+#        self.assertEqual(rec, '###\n###\n###\n')
 
 
 if __name__ == '__main__':

@@ -23,16 +23,16 @@ class test_base(unittest.TestCase):
         base = Base(1)
         self.assertEqual(base.id, 1)
 
-    def test_wrong(self):
-        """Test base, there is only one exception raised for None"""
-        base2 = Base([1, 2, 3])
-        self.assertEqual(base2.id, [1, 2, 3])
-        base3 = Base("ate")
-        self.assertEqual(base3.id, "ate")
-        base4 = Base(None)
-        self.assertEqual(base4.id, 1)
-        base5 = Base(True)
-        self.assertEqual(base5.id, True)
+#    def test_wrong(self):
+#        """Test base, there is only one exception raised for None"""
+#        base2 = Base([1, 2, 3])
+#        self.assertEqual(base2.id, [1, 2, 3])
+#        base3 = Base("ate")
+#        self.assertEqual(base3.id, "ate")
+#        base4 = Base(None)
+#        self.assertEqual(base4.id, 1)
+#        base5 = Base(True)
+#        self.assertEqual(base5.id, True)
 
     def test_to_json_string(self):
         """Test function to_json_string"""
