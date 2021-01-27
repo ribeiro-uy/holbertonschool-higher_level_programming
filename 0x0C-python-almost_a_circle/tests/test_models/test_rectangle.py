@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""test module for rectangle"""
-
-
+"""
+Test module for rectangle.
+"""
 import unittest
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
     """testing the Rectangle class and its methods"""
-    
+
     def test_inst_methods(self):
         """test methods"""
         test_inst = Rectangle(2, 3, 0, 0, 1)
@@ -19,7 +19,7 @@ class TestRectangle(unittest.TestCase):
         """test to_dictionary"""
         self.assertEqual(test_inst.to_dictionary(),
                          {'id': 1, 'width': 2, 'height': 3, 'x': 0, 'y': 0})
-        
+
     def test_negatives(self):
         """test negative values"""
         with self.assertRaises(ValueError):
@@ -49,7 +49,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             """on y"""
             fail_inst = Rectangle(2, 3, 0, '0', 1)
-            
+
     def test_None_values(self):
         """test None values"""
         with self.assertRaises(TypeError):
@@ -64,7 +64,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             """on y"""
             fail_inst = Rectangle(2, 5, 0, None, 1)
-            
+
     def test_arg_number(self):
         """test less that 3 args and more than 5 args"""
         with self.assertRaises(TypeError):
@@ -80,7 +80,7 @@ class TestRectangle(unittest.TestCase):
         inst_update.update(13, 3, 2, 0, 0)
         self.assertEqual(inst_update.to_dictionary(),
                          {'id': 13, 'width': 3, 'height': 2, 'x': 0, 'y': 0})
-        
+
     def test_update_failure(self):
         """test failures of update method"""
         inst_up = Rectangle(1, 1, 1, 1)
@@ -90,7 +90,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             """wrong data type"""
             inst_up.update(1, 1, 'test', [1], 1)
-            
+
     def test_float_values(self):
         """Test values as floats."""
         with self.assertRaises(TypeError):
@@ -131,7 +131,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             # Float('NaN') as y
             fail_inst = Rectangle(2, 3, 0, float('NaN'), 1)
-            
+
     def test_boolean_values(self):
         """Test values as floats."""
         with self.assertRaises(TypeError):
@@ -150,7 +150,7 @@ class TestRectangle(unittest.TestCase):
             # Boolean as y
             fail_inst = Rectangle(2, 3, 0, True, 1)
             fail_inst = Rectangle(2, 3, 0, False, 1)
-        
+
     def test_zero_values(self):
         """Test passing 0."""
         with self.assertRaises(ValueError):
@@ -159,7 +159,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             # on height
             fail_inst = Rectangle(2, 0, 0, 0, 1)
-            
+
     def test_kwargs(self):
         """test update with kwargs"""
         inst_update = Rectangle(1, 1, 0, 0, 1)
@@ -171,7 +171,7 @@ class TestRectangle(unittest.TestCase):
         inst_update.update(13, 1, 1, width=3, height=2)
         self.assertEqual(inst_update.to_dictionary(),
                          {'id': 13, 'width': 1, 'height': 1, 'x': 0, 'y': 0})
-        
+
     def test_update_failure(self):
         """test failures of update method with kwargs"""
         inst_up = Rectangle(1, 1, 1, 1)
@@ -184,18 +184,18 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             """0 on height"""
             inst_up.update(id=1, height=0, width=1, x=1, y=1)
-            
+
     def test_display(self):
         """test the display function"""
         import io
         import contextlib
-        
         inst = Rectangle(3, 4, 0, 0, 1)
         with io.StringIO() as fd:
             with contextlib.redirect_stdout(fd):
                 inst.display()
                 rec = fd.getvalue()
         self.assertEqual(rec, '###\n###\n###\n###\n')
-        
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""module of tests for square"""
-
-
+"""
+Module of tests for square.
+"""
 import unittest
 from models.square import Square
 
@@ -13,19 +13,19 @@ class Test_Square(unittest.TestCase):
         objects that don't need any other documentation"""
         t = "class" if inspect.isclass(item) else "function"
         item.__doc__ = "This {} intentionally has no documentation".format(t)
-        
+
     def test_area(self):
         """Test area of rectangle"""
         test_inst = Square(2, 2)
         self.assertEqual(test_inst.area(), 4)
-        
+
     def test_square(self):
         """Test Square without parameters"""
         square = Square(1, 2, 3)
         square2 = Square(2)
         square3 = Square(2, 3)
         square4 = Square(2, 3, 4, 5)
-        
+
     def test_wrong_parameter(self):
         """Test for non int arguments in square"""
         with self.assertRaises(TypeError):
@@ -36,7 +36,7 @@ class Test_Square(unittest.TestCase):
             square = Square([1, 2, 3])
             square = Square("str", 2)
             square = Square({"id": 1, "od": 2})
-            
+
     def test_size(self):
         """Test for size values"""
         square = Square(1, 2, 3)
@@ -44,7 +44,7 @@ class Test_Square(unittest.TestCase):
             square.size = -1
             square.size = 1e10000000
             square.size = 0
-            
+
     def test_none_size(self):
         """Test for non int values in size"""
         square = Square(1, 2, 3)
@@ -57,29 +57,29 @@ class Test_Square(unittest.TestCase):
             square.size = 2.34
             square.size = (1, 2, 3)
             square.size = float(NaN)
-            
+
     def test_negative_square(self):
         """Test for size negative value"""
         with self.assertRaises(ValueError):
             square = Square(-2)
-            
+
     def test_0_square(self):
         """Test for 0 value in size"""
         with self.assertRaises(ValueError):
             square = Square(0, 2, 3)
-            
+
     def test_x_value(self):
         """Test negative value in x"""
         square = Square(1)
         with self.assertRaises(ValueError):
             square.x = -2
-            
+
     def test_y_value(self):
         """Test negative value in y"""
         square = Square(1)
         with self.assertRaises(ValueError):
             square.y = -5
-            
+
     def test_x_type(self):
         """Test non int values in x"""
         square = Square(2)
@@ -93,7 +93,7 @@ class Test_Square(unittest.TestCase):
             square.x = {"id": 1, "od": 2}
             square.x = (1, 2, 3)
             square.x = float(NaN)
-            
+
     def test_y_type(self):
         """Test non int values in y"""
         square = Square(2)
@@ -107,17 +107,17 @@ class Test_Square(unittest.TestCase):
             square.y = {"id": 1, "od": 2}
             square.y = (1, 2, 3)
             square.y = float(NaN)
-            
+
     def test_more_parameters(self):
         """Test more than 4 arguments"""
         with self.assertRaises(TypeError):
             square = Square(2, 4, 5, 7, 8, 9)
-            
+
     def test_str(self):
         """Test str for square"""
         square = Square(5, 0, 0, 4)
         self.assertEqual(square.__str__(), '[Square] (4) 0/0 - 5')
-        
+
     def test_update(self):
         """Test update with correct values"""
         square = Square(5)
@@ -125,7 +125,7 @@ class Test_Square(unittest.TestCase):
         square.update(1, 2, y=3)
         square.update(1, 12, id=4)
         square.update(size=2, y=5)
-        
+
     def test_update_wrong(self):
         """Test update with value errors"""
         square = Square(5)
@@ -134,7 +134,7 @@ class Test_Square(unittest.TestCase):
             square.update(-1, 2, 3)
             square.update(size=-1, x=2, y=3)
             square.update(size=1e1000000)
-            
+
     def test_update_type(self):
         """Test update with Type error"""
         square = Square(4)
@@ -150,18 +150,18 @@ class Test_Square(unittest.TestCase):
             square.update(float(NaN))
             square.update(size=[1, 2, 3])
             square.update(2, x="ate", y=3)
-            
+
     def test_display(self):
         """test the display function"""
         import io
         import contextlib
-        
         inst = Square(3, 0, 0, 1)
         with io.StringIO() as fd:
             with contextlib.redirect_stdout(fd):
                 inst.display()
                 rec = fd.getvalue()
         self.assertEqual(rec, '###\n###\n###\n')
-                
+
+
 if __name__ == '__main__':
     unittest.main()
