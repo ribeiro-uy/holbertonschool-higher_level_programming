@@ -9,5 +9,5 @@ process.argv.forEach((val, index) => {
   numArguments += 1;
   argument = val;
 });
-if (numArguments === 3) console.log(argument);
+if (numArguments >= 3) console.log(argument);
 else if (numArguments === 2) console.log('No argument');
