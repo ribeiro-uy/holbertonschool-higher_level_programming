@@ -12,7 +12,6 @@ process.argv.forEach((val, index) => {
 });
 newArgument = [...new Set(argument)];
 newArgument.sort((a, b) => a - b);
-console.log('check newArgument:' + newArgument);
 if (lastIndex <= 2)
   console.log(0);
 else if (lastIndex === 3)
