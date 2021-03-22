@@ -4,7 +4,7 @@
 */
 
 let numArguments = 0;
-let argument = [];
+const argument = [];
 process.argv.forEach((val, index) => {
   numArguments += 1;
   argument[index] = val;
