@@ -6,6 +6,6 @@
 
 let numArguments = 0;
 exports.logMe = (item) => {
-  console.log(`${num}: ${item}`);
+  console.log(`${numArguments}: ${item}`);
   numArguments++;
 };
