@@ -14,8 +14,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     conection = engine.connect()
     selection = conection.execute("Select * from states")
-#    for elements in selection:
-#        print(elements)
-    new_list = []
     for elements in selection:
        print("{}: {}".format(elements[0], elements[1]))
