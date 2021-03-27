@@ -14,10 +14,11 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    first_city = session.query(State).first()
-    if first_city:
-        print("{}: {}".format(first_city.id, first_city.name))
-
+    first_state = session.query(State).first()
+    if first_state:
+        print("{}: {}".format(first_state.id, first_state.name))
+    else:
+        print("Nothing")
 """
    for states in session.query(State).first():
         print("{}: {}".format(states.id, states.name))
