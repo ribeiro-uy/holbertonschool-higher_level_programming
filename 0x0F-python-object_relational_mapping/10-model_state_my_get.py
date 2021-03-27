@@ -15,9 +15,9 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_id = session.query(State).filter_by(name=argv[4])
+    state_id = session.query(State).filter_by(name=argv[4]).first()
     if state_id:
-        print(state_id[0].id)
+        print(state_id.id)
     else:
         print("Not found")
     session.close()
