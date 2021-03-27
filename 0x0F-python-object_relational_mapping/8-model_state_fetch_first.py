@@ -14,7 +14,6 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
- 
     first_city = session.query(State).first()
     print("{}: {}".format(first_city.id, first_city.name))
 
